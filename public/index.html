@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Not a Video Player</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👁‍🗨</text></svg>">
+  <link rel="stylesheet" href="/style.css">
+  <script>if(localStorage.getItem('theme')==='light')document.documentElement.setAttribute('data-theme','light')</script>
+</head>
+<body>
+  <header>
+    <svg class="logo" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#7b68ee"/>
+          <stop offset="100%" stop-color="#00c9ff"/>
+        </linearGradient>
+        <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#00c9ff"/>
+          <stop offset="100%" stop-color="#7b68ee"/>
+        </linearGradient>
+      </defs>
+      <ellipse cx="60" cy="30" rx="56" ry="28" fill="none" stroke="url(#g1)" stroke-width="2.5"/>
+      <ellipse cx="60" cy="30" rx="38" ry="22" fill="none" stroke="url(#g2)" stroke-width="1.5" opacity="0.5"/>
+      <circle cx="60" cy="30" r="12" fill="url(#g1)"/>
+      <polygon points="56,24 56,36 68,30" fill="#0a0a0f" class="logo-play"/>
+    </svg>
+    <h1>Not a Video Player</h1>
+    <p>Paste magnet links — play in VLC</p>
+    <button class="theme-toggle" id="themeToggle" title="Toggle theme">&#x1F319;</button>
+  </header>
+
+  <div class="container">
+    <div class="input-section">
+      <input type="text" id="magnetInput" placeholder="magnet:?xt=urn:btih:..." spellcheck="false">
+      <button class="btn" id="loadBtn">Add</button>
+    </div>
+
+    <div id="torrentList">
+      <div class="empty-state" id="emptyState">
+        <div class="empty-title">Paste a magnet link above to get started</div>
+        <div class="empty-formats">
+          <div class="format-card">
+            <div class="format-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="5,3 19,12 5,21"/>
+              </svg>
+            </div>
+            <div class="format-label">Video</div>
+            <div class="format-tags">
+              <span class="format-tag">MP4</span>
+              <span class="format-tag">MKV</span>
+              <span class="format-tag">AVI</span>
+              <span class="format-tag">MOV</span>
+              <span class="format-tag">WEBM</span>
+              <span class="format-tag">OGV</span>
+            </div>
+          </div>
+          <div class="format-card">
+            <div class="format-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 18V5l12-2v13"/>
+                <circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
+              </svg>
+            </div>
+            <div class="format-label">Audio</div>
+            <div class="format-tags">
+              <span class="format-tag">MP3</span>
+              <span class="format-tag">FLAC</span>
+              <span class="format-tag">WAV</span>
+              <span class="format-tag">AAC</span>
+              <span class="format-tag">OGG</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
